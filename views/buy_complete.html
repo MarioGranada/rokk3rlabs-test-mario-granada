@@ -1,0 +1,29 @@
+<section class="content-section books-table">
+	<a class="back-to-home-link" href="#/store"><span class="back-to-home-span"><i class="fa fa-angle-left"></i></span> HOME</a>
+	<div class="buy-container">
+		<div class="table-title purchased-items-title">BOOKS YOU'VE JUST PURCHASED</div>
+		<ul class="items-table">
+			<li class="item-row purchased-item" ng-repeat="item in CartItems">
+					<div class='item-index-box'>
+					<div class="item-index">{{$index+1}}</div>
+					</div>
+					<div class="item-image"><img ng-src="{{item.image}}"></div>
+					<a class="item-download row-icon" href=""><img src="images/Button-Download.png"></a>
+					<div class="item-description">
+						<div class="item-title">{{item.titleItem}}</div>
+						<a class="item-artist-name" href="">{{item.artistName}}</a>
+						<a class="item-more-info" href=""><img src="images/Button-Info.png"></a>
+					</div>
+				
+				<div class="item-price-box">
+				<div class="item-price">{{item.price | currency}}</div>
+				<a class="see-item-review" href="">See Review</a>
+				</div>
+				
+			</li>
+		</ul>
+		<div class="total-price-container col-md-3">
+			<div class="total-price-box">Total Price: <span class="total-price">{{CartTotal | currency}}</span></div>
+		</div>
+	</div>
+</section>

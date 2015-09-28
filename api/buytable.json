@@ -1,0 +1,28 @@
+{
+	"buyTable": [
+      { 
+      	"titleItem": "Seven Nation Army", 
+      	"artistName": "White Stripes", 
+      	"price": "650", 
+      	"image": "images/Thumb-01.jpg" 
+      },
+      { 
+      	"titleItem": "Perro come perro", 
+      	"artistName": "Superlitio", 
+      	"price": "999", 
+      	"image": "images/Thumb-02.jpg"
+      },
+      { 
+      	"titleItem": "Kids", 
+      	"artistName": "MGMT", 
+      	"price": "599", 
+      	"image": "images/Thumb-03.jpg" 
+      },
+      { 
+      	"titleItem": "The Bay", 
+      	"artistName": "Metronomy", 
+      	"price": "789", 
+      	"image": "images/Thumb-04.jpg" 
+      }
+    ]
+}

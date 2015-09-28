@@ -1,0 +1,50 @@
+<section class="slide-show-section">
+
+<ul id="carousel-imgs" class="bxslider carousel-slide-show" data-bx-slider="">
+
+	<li ng-repeat="slide in carousel" data-notify-when-repeat-finished>
+		<div class="item">
+			<img data-ng-src="{{slide.source}}">
+			<div class="slide-caption-container">
+			<div class="slide-title">{{slide.title}}</div>
+			<div class="slide-caption">{{slide.caption}}</div>
+			</div>
+		</div>
+	</li>
+</ul>
+</section>
+<section class="content-section books-table">
+	<div class="buy-container">
+		<div class="table-title wish-list-title">MY WISH LIST</div>
+		<!-- <input type="text" class="form-control" ng-model="BooksFilter" /> -->
+		<ul class="items-table">
+			<li class="item-row" ng-repeat="book in resultValue=(books | filter:{'price':BooksFilter})">
+				
+					<div class='item-index-box'>
+					<div class="item-index">{{$index+1}}</div>
+					</div>
+					<div class="item-image"><img ng-src="{{book.image}}"></div>
+					<a class="item-download row-icon" href=""><img src="images/Button-Download.png"></a>
+					<div class="item-description col-md-4">
+						<div class="item-title">{{book.titleItem}}</div>
+						<a class="item-artist-name" href="">{{book.artistName}}</a>
+						<a class="item-more-info" href=""><img src="images/Button-Info.png"></a>
+					</div>
+				
+				<div class="item-price-box">
+					<div class="item-price">{{book.price | currency}}</div>
+					<a class="see-item-review" href="">See Review</a>
+				</div>
+				
+				<div id="remove-{{$index}}" class="remove-item-button row-icon" ><img src="images/Button-Close.png" ng-click="removeElement(this)"></div>
+				<a href="#/buy_complete/?bookid={{$index}}" id="buy-{{$index}}" class="buy-book-button">Buy</a>
+				<a href="" class="contract-link">View Contract</a>
+				
+			</li>
+		</ul>
+		<div class="total-price-container col-md-3">
+			<div class="total-price-box">Total Price: <span class="total-price">{{resultValue | CheckoutTotalFilter:'price':$index| currency}}</span></div>
+			<div class="buy-all-items-link-box"><a href="#/buy_complete/?bookid=all" class="buy-all-items-link">Buy All Books</a></div>
+		</div>
+	</div>
+</section>
